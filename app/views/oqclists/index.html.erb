@@ -1,0 +1,36 @@
+<h1>OQC 檢 驗 記 錄 清 單</h1>
+<table class="table table-hover">
+    <tr>
+        <th>項目</th>
+        <th>日期</th>
+        <th>客戶</th>
+        <th>機種</th>
+        <th>料號</th>
+        <th>批號</th>
+        <th>數量</th>
+    </tr>
+    <% @oqclists.each do |oqclist|%>
+        <tr>
+            <td>
+                <%= link_to oqclist_path(oqclist) do %>
+                    <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                <% end %>
+                <%= link_to edit_oqclist_path(oqclist) do %>
+                    <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                <% end %>
+                <%= link_to oqclist_path(oqclist), :method => :delete, :data => { :confirm => "你確定嗎?" } do %>
+                    <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                <% end %>
+            </td>
+            <td><%= oqclist.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
+            <td><%= oqclist.customer_name %></td>
+            <td><%= oqclist.product_model %></td>
+            <td><%= oqclist.product_partno %></td>
+            <td><%= oqclist.lotno %></td>
+            <td class="quantity"><%= oqclist.quantity %></td>
+        </tr>
+    <% end %>
+</table>
+<%= link_to new_oqclist_path do %>
+    <button type="button" class="btn btn-base btn-sm"><i class="fa fa-newspaper-o" aria-hidden="true"></i></button>
+<% end %>

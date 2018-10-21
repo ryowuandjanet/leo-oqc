@@ -1,0 +1,17 @@
+th {
+    background-color: black;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td.quantity {
+    text-align: right;
+}
+
+body {
+    font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+}
+h1 {
+    text-align: center;
+}

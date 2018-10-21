@@ -1,0 +1,21 @@
+<h1><%= @oqclist.created_at.strftime("%Y%m%d") %>_<%= @oqclist.customer_name %>_<%= @oqclist.product_model %> 檢驗記錄表</h1>
+
+<table class="table">
+    <tr>
+        <th>檢驗時間</th>
+        <td><%= @oqclist.created_at.strftime("%Y-%m-%d") %></td>
+        <th>客戶</th>
+        <td><%= @oqclist.customer_name %></td>
+        <th>機種名</th>
+        <td><%= @oqclist.product_model %></td>        
+    </tr>
+    <tr>
+        <th>料號</th>
+        <td><%= @oqclist.product_partno %></td>
+        <th>批號</th>
+        <td><%= @oqclist.lotno %></td>
+        <th>數量</th>
+        <td><%= @oqclist.quantity %></td>
+    </tr>   
+</table>
+<%= link_to "back to root", root_path %>
