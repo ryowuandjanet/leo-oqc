@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  inspector: MyString
+  oqclist: one
+
+two:
+  inspector: MyString
+  oqclist: two

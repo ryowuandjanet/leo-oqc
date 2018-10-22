@@ -3,9 +3,11 @@ class OqclistsController < ApplicationController
     
     def index
         @oqclists=Oqclist.all
+        @page_title="檢驗清單首頁"
     end
     
     def show
+        @page_title="查看單筆資料"
     end
     
     def new
@@ -36,6 +38,7 @@ class OqclistsController < ApplicationController
         @oqclist.destroy
         redirect_to root_path
     end
+    
     
     private
     def set_oqclist

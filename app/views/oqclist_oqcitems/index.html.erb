@@ -1,0 +1,9 @@
+<h1><%= @oqclist.created_at.strftime("%Y%m%d") %>_<%= @oqclist.customer_name %>_<%= @oqclist.product_model %>_<%= @oqclist.quantity %> 檢驗記錄表</h1>
+<ul>
+    <% @oqcitems.each do |oqcitem| %>
+        <li><%= oqcitem.oqclist.lotno %></li>
+        <li><%= oqcitem.oqclist.customer_name %></li>
+        <li><%= oqcitem.inspector %></li>
+    <% end %>
+</ul>
+<%= link_to "back to root", oqclists_path %>

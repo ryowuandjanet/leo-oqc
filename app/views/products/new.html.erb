@@ -1,0 +1,14 @@
+<%= form_for @product, :url => products_path do |f| %>
+    <div class="form-group">
+        <%= f.label :model, "Model:" %>
+        <%= f.text_field :model, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :partno, "Lot No:" %>
+        <%= f.text_field :partno, :class => "form-control" %>    
+    </div>
+    <%= f.submit "Create" %>
+<% end %>
+<p>
+    <%= link_to "Back", new_oqclist_path, :class => "btn btn-info btn-sm" %>
+</p>

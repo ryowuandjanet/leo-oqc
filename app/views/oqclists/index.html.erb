@@ -2,12 +2,13 @@
 <table class="table table-hover">
     <tr>
         <th>項目</th>
-        <th>日期</th>
+        <th>建立日期</th>
         <th>客戶</th>
         <th>機種</th>
         <th>料號</th>
         <th>批號</th>
         <th>數量</th>
+        <th>輸入</th>
     </tr>
     <% @oqclists.each do |oqclist|%>
         <tr>
@@ -28,6 +29,11 @@
             <td><%= oqclist.product_partno %></td>
             <td><%= oqclist.lotno %></td>
             <td class="quantity"><%= oqclist.quantity %></td>
+            <td class="oqcitem-input">
+                <%= link_to oqclist_oqcitems_path(oqclist), :target => "_blank", :class => "btn btn-info btn-sm" do %>
+                        <i class="fa fa-keyboard-o" aria-hidden="true"></i>     
+                <% end %>
+            </td>
         </tr>
     <% end %>
 </table>

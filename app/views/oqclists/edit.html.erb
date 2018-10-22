@@ -1,9 +1,4 @@
 <%= form_for @oqclist, :url => oqclist_path(@oqclist), :method => :patch do |f| %>
-    <%= f.label :lotno, "Lot No:" %>
-    <%= f.text_field :lotno %>
-    <%= f.label :product_id, "Par No:" %>
-    <%= f.select :product_id, Product.all.map{ |x|[x.partno,x.id]} %>
-    <%= f.label :quantity, "Lot No:" %>
-    <%= f.number_field :quantity %>
-    <%= f.submit "Create" %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= f.submit "Update" %>
 <% end %>

@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_20_144942) do
+ActiveRecord::Schema.define(version: 2018_10_21_004443) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "oqcitems", force: :cascade do |t|
+    t.string "inspector"
+    t.integer "oqclist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["oqclist_id"], name: "index_oqcitems_on_oqclist_id"
   end
 
   create_table "oqclists", force: :cascade do |t|
